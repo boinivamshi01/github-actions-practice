@@ -13,11 +13,10 @@ jobs:
       - name: Check out repo code
         uses: actions/checkout@v4
 
-      - name: Print a message
-        run: echo "Hello from GitHub Actions!"
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
-      - name: Show current date
-        run: date
-
-      - name: List files in repo
-        run: ls -la
+      - name: Run my script
+        run: python hello.py
