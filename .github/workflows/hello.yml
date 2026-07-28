@@ -1,6 +1,10 @@
 name: My First Workflow
 
-on: push
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   say-hello:
@@ -8,3 +12,9 @@ jobs:
     steps:
       - name: Print a message
         run: echo "Hello from GitHub Actions!"
+
+      - name: Show current date
+        run: date
+
+      - name: List files in repo
+        run: ls -la
